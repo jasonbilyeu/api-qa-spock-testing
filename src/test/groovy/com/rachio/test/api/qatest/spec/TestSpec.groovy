@@ -8,8 +8,7 @@ import spock.lang.Specification
 @Log
 class TestSpec extends Specification {
 
-    /* TODO: REPLACE WITH RACHIO PROVIDED API TOKEN */
-    def apiToken = '2bce46e7-b77a-4408-93d9-658c36348e51'
+    def apiToken = 'insert_rachio_token_here'
 
     def "Get Call and receive 200"() {
         def getRequest

@@ -1,0 +1,44 @@
+Attempted to generate Java api models and clients with swagger-codegen (https://github.com/swagger-api/swagger-codegen) but got the following stack trace:
+
+java -jar swagger-codegen-cli.jar generate -i https://rachio.readme.io/v1.0/swagger.json -l java -o src/test/java/com/rachio/api/client
+[main] INFO io.swagger.parser.Swagger20Parser - reading from https://rachio.readme.io/v1.0/swagger.json
+[main] INFO io.swagger.parser.Swagger20Parser - reading from https://rachio.readme.io/v1.0/swagger.json
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('<' (code 60)): expected a valid value (number, String, array, object, 'true', 'false' or 'null')
+ at [Source: <pre>{
+  "swagger": "2.0",
+  "info": {},
+  "schemes": [
+    "https"
+  ],
+  "host": "api.rach.io",
+  "basePath": "/1",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {}
+}</pre>; line: 1, column: 2]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1419)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:508)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:437)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1462)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:683)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:3105)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3051)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:1833)
+	at io.swagger.parser.SwaggerCompatConverter.readResourceListing(SwaggerCompatConverter.java:145)
+	at io.swagger.parser.SwaggerCompatConverter.read(SwaggerCompatConverter.java:74)
+	at io.swagger.parser.SwaggerParser.read(SwaggerParser.java:72)
+	at io.swagger.codegen.config.CodegenConfigurator.toClientOptInput(CodegenConfigurator.java:390)
+	at io.swagger.codegen.cmd.Generate.run(Generate.java:221)
+	at io.swagger.codegen.SwaggerCodegen.main(SwaggerCodegen.java:36)
+Exception in thread "main" java.lang.RuntimeException: missing swagger input or config!
+	at io.swagger.codegen.DefaultGenerator.generate(DefaultGenerator.java:132)
+	at io.swagger.codegen.cmd.Generate.run(Generate.java:223)
+	at io.swagger.codegen.SwaggerCodegen.main(SwaggerCodegen.java:36)
+
+It appears something is not configured properly on your server (possible http vs https protocol issue), here is a link to a thread that may help explain why this is happening: https://groups.google.com/forum/#!topic/swagger-swaggersocket/T2Fo4QY2XTQ
+
+

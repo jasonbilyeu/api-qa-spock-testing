@@ -1,12 +1,9 @@
 package com.rachio.test.api.qatest.spec.person
 
 import com.rachio.test.api.qatest.client.Client
-import com.rachio.test.api.qatest.client.exceptions.ForbiddenException
 import com.rachio.test.api.qatest.models.person.Person
 import com.rachio.test.api.qatest.models.person.PersonInfo
 import spock.lang.Specification
-
-import static com.rachio.test.api.qatest.util.ARandom.aRandom
 
 class PersonServiceSpec extends Specification {
     static final String PERSON_ID = '7d0e4fed-e1f7-46df-b106-f1badf633c4f'

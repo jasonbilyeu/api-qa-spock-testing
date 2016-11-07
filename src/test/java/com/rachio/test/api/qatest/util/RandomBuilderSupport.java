@@ -1,5 +1,6 @@
 package com.rachio.test.api.qatest.util;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 import static com.rachio.test.api.qatest.util.ARandom.aRandom;
@@ -23,5 +24,9 @@ public class RandomBuilderSupport {
         randomDouble = randomDouble * 100;
         randomDouble = Math.round(randomDouble);
         return randomDouble / 100;
+    }
+
+    public int eventTypeId() {
+        return aRandom.getItem(Arrays.asList(5, 6, 7, 8, 9, 10, 11, 12, 14));
     }
 }

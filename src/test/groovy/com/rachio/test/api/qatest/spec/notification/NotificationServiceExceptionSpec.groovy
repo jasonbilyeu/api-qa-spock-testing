@@ -1,14 +1,11 @@
 package com.rachio.test.api.qatest.spec.notification
 
 import com.rachio.test.api.qatest.client.Client
-import com.rachio.test.api.qatest.client.exceptions.BadRequestException
 import com.rachio.test.api.qatest.client.exceptions.ForbiddenException
 import com.rachio.test.api.qatest.client.exceptions.PreconditionFailedException
 import com.rachio.test.api.qatest.client.exceptions.UnauthorizedException
 import com.rachio.test.api.qatest.models.notification.Webhook
-import com.rachio.test.api.qatest.models.notification.WebhookEventType
 import com.rachio.test.api.qatest.spec.device.DeviceServiceSpec
-import org.joda.time.DateTime
 import spock.lang.Specification
 
 import static com.rachio.test.api.qatest.util.ARandom.aRandom

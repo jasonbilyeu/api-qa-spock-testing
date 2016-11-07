@@ -1,14 +1,10 @@
 package com.rachio.test.api.qatest.spec.zone
 
 import com.rachio.test.api.qatest.client.Client
-import com.rachio.test.api.qatest.client.exceptions.BadRequestException
-import com.rachio.test.api.qatest.client.exceptions.ForbiddenException
 import com.rachio.test.api.qatest.models.zone.Zone
 import org.joda.time.DateTime
 import spock.lang.Ignore
 import spock.lang.Specification
-
-import static com.rachio.test.api.qatest.util.ARandom.aRandom
 
 class ZoneServiceSpec extends Specification {
     static final String ZONE_ID = '1b33d92e-39a3-4951-83bc-a40f71a9c808'

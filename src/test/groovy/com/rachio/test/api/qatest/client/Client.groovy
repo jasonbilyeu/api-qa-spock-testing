@@ -8,7 +8,6 @@ import com.rachio.test.api.qatest.client.exceptions.NotFoundException
 import com.rachio.test.api.qatest.client.exceptions.BadRequestException
 import com.rachio.test.api.qatest.client.exceptions.PreconditionFailedException
 import com.rachio.test.api.qatest.client.exceptions.UnauthorizedException
-import groovy.util.logging.Log
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.HttpResponseException
 
@@ -17,7 +16,6 @@ import static groovyx.net.http.Method.POST
 import static groovyx.net.http.Method.PUT
 import static groovyx.net.http.ContentType.JSON
 
-@Log
 class Client {
 
     static final String API_TOKEN = '482f6cfa-1d00-4d62-9f58-5d7e2538721b'
